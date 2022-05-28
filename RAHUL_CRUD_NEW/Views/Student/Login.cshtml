@@ -1,0 +1,84 @@
+﻿@model RAHUL_CRUD_NEW.Rahul.User_Table
+    
+
+
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="text-center m-b-md custom-login">
+                    <h3>PLEASE LOGIN </h3>
+
+                </div>
+                <div class="hpanel">
+                    <div class="panel-body">
+
+                        @using (Html.BeginForm("login", "Student", FormMethod.Post))
+                        {
+                            <form action="#" id="loginForm">
+                                <div class="form-group">
+                                    <label class="control-label" for="username">Email</label>
+                                    @*   <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="" name="username" id="username" class="form-control">*@
+                                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "Please Enter your  Email:", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { })
+                                    <span style="color:red">@TempData["test"]</span>
+                                    @*  <span class="help-block small">Your unique username to app</span>*@
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="password">Password</label>
+                                    @*  <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">*@
+                                    @Html.PasswordFor(m => m.Password, new { @placeholder = "*******", @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { })
+                                    <span style="color:red">@TempData["test2"]</span>
+                                    <span class="help-block small">Yur strong password</span>
+                                </div>
+                                <div class="checkbox login-checkbox">
+                                    <label>
+                                        <input type="checkbox" class="i-checks"> Remember me
+                                    </label>
+                                    <p class="help-block small">(if this is a private computer)</p>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-block loginbtn">Login</button>
+                                <a class="btn btn-default btn-block" href="@Url.Action("AddUser", "Student")">Register</a>
+                            </form>
+                        }
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
+        </div>
+    </div>
+
+@*
+    <a href="@Url.Action("AddUser","Student")" class="btn btn-lg btn-success btn-block">New User</a>
+
+
+    @using (Html.BeginForm("Login", "Student", FormMethod.Post))
+    {
+
+        <div>
+            <lable class="form-control"> User Email </lable>
+            @Html.TextBoxFor(m => m.Email, new { @class = "Form-control", @placeholder = "Enter your Email." })
+            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+            <span>@TempData["emailnotfound"]</span>
+        </div>
+
+        <div>
+            <lable class="form-control">User Password </lable>
+            @Html.PasswordFor(m => m.Password, new { @class = "Form-control", @placeholder = "Enter your Password." })
+            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+            <span>@TempData["password"]</span>
+        </div>
+        <br />
+
+
+        <button type="submit" class="btn-group">Login</button>
+
+    }
+
+
+
+    <a class="btn btn-primary" href="@Url.Action("AddUser","Student")">New User</a>*@

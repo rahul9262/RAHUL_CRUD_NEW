@@ -1,0 +1,158 @@
+﻿@model RAHUL_CRUD_NEW.Models.UserModel
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+            <div class="col-md-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="text-center custom-login">
+                    <h3>Registration</h3>
+                    <p>Admin template with very clean and aesthetic style prepared for your next app. </p>
+                </div>
+                <div class="hpanel">
+                    <div class="panel-body">
+
+                        @using (Html.BeginForm("AddUser", "Student", FormMethod.Post))
+                        {
+                            <form action="#" id="loginForm">
+                                <div class="row">
+
+                                    <div>
+
+
+                                        <lable class="form-control">User Id</lable>
+                                        @Html.TextBoxFor(m => m.Userid, "", new { @class = "Form-control", @placeholder = "Enter your User Id." })
+                                        @Html.ValidationMessageFor(m => m.Userid, "", new { @class = "error" })
+                                    </div>
+                                    <div>
+
+
+                                        <lable class="form-control">Name </lable>
+                                        @Html.TextBoxFor(m => m.Name, "", new { @class = "Form-control", @placeholder = "Enter your name ." })
+                                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+                                    </div>
+                                    <div>
+
+
+                                        <lable class="form-control">Email Id</lable>
+                                        @Html.TextBoxFor(m => m.Email, "", new { @class = "Form-control", @placeholder = "Enter your Email Id." })
+                                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+                                    </div>
+                                    <div>
+
+
+                                        <lable class="form-control">Password </lable>
+                                        @Html.TextBoxFor(m => m.Password, "", new { @class = "Form-control", @placeholder = "Enter your password ." })
+                                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+                                    </div>
+                                    <div>
+
+
+                                        <lable class="form-control">Mobile No</lable>
+                                        @Html.TextBoxFor(m => m.MobIle, "", new { @class = "Form-control", @placeholder = "Enter your Mobile No." })
+                                        @Html.ValidationMessageFor(m => m.MobIle, "", new { @class = "error" })
+                                    </div>
+
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-success loginbtn">Register</button>
+                                    <button type="reset" class="btn btn-default">Cancel</button>
+                                </div>
+                            </form>
+                        }
+                        </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@{
+        ViewBag.Title = "AddUser";
+    }
+
+    <h2>AddUser</h2>
+    <style>
+        .error {
+            color: red;
+        }
+
+        .rk {
+            text-align: center;
+            color: blue;
+            background-color: aqua;
+        }
+    </style>
+    @using (Html.BeginForm("AddUser", "Student", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div class="rk">
+
+            <div>
+
+
+                <lable class="form-control">User Id</lable>
+                @Html.TextBoxFor(m => m.Userid, "", new { @class = "Form-control", @placeholder = "Enter your Roll No." })
+                @Html.ValidationMessageFor(m => m.Userid, "", new { @class = "error" })
+            </div>
+            <div>
+
+
+                <lable class="form-control">Name </lable>
+                @Html.TextBoxFor(m => m.Name, "", new { @class = "Form-control", @placeholder = "Enter your name ." })
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+            </div>
+            <div>
+
+
+                <lable class="form-control">Email Id</lable>
+                @Html.TextBoxFor(m => m.Email, "", new { @class = "Form-control", @placeholder = "Enter your Email Id." })
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "error" })
+            </div>
+            <div>
+
+
+                <lable class="form-control">Password </lable>
+                @Html.TextBoxFor(m => m.Password, "", new { @class = "Form-control", @placeholder = "Enter your password ." })
+                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })
+            </div>
+            <div>
+
+
+                <lable class="form-control">Mobile No</lable>
+                @Html.TextBoxFor(m => m.MobIle, "", new { @class = "Form-control", @placeholder = "Enter your Mobile No." })
+                @Html.ValidationMessageFor(m => m.MobIle, "", new { @class = "error" })
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-primary">AddUser</button>
+
+    }
+    <a class="btn btn-primary" href="@Url.Action("Login","Student")">Login</a>*@

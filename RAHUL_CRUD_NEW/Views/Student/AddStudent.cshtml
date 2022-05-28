@@ -1,0 +1,70 @@
+﻿@model RAHUL_CRUD_NEW.Models.StudentModel
+@*@model RAHUL_CRUD.Rahul.Stu_Table*@
+@{ ViewBag.Title = "AddStudent"; }
+
+<h2>AddStudent</h2>
+<style>
+    .error {
+        color: red;
+    }
+
+    .rk {
+        text-align: center;
+        color: blue;
+        background-color: aqua;
+    }
+</style>
+@using (Html.BeginForm("AddStudent", "Student", FormMethod.Post))
+{
+@Html.AntiForgeryToken()
+                <div class="rk">
+                      
+                   
+                    @*<div>
+                        <lable class="form-control">Roll No</lable>
+                        @Html.TextBoxFor(m => m.RollNo, "", new { @class = "Form-control", @placeholder = "Enter your Roll No." })
+                        @Html.ValidationMessageFor(m => m.RollNo, "", new { @class = "error" })
+                    </div>*@
+
+                       @Html.HiddenFor(m=>m.RollNo)
+
+                    <div>
+                        <lable class="form-control">Name </lable>
+                        @Html.TextBoxFor(m => m.Name, "", new { @class = "Form-control", @placeholder = "Enter your Nmae." })
+                        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "error" })
+                    </div>
+                    <div>
+                        <lable class="form-control">Class </lable>
+                        @Html.TextBoxFor(m => m.Class, "", new { @class = "Form-control", @placeholder = "Enter your Class ." })
+                        @Html.ValidationMessageFor(m => m.Class, "", new { @class = "error" })
+                    </div>
+                    <div>
+                        <lable class="form-control">Morks Obtain</lable>
+                        @Html.TextBoxFor(m => m.P_Marks, "", new { @class = "Form-control", @placeholder = "Enter your Marks Obtain." })
+                        @Html.ValidationMessageFor(m => m.P_Marks, "", new { @class = "error" })
+                    </div>
+                    <div>
+                        <lable class="form-control"> Total Marks</lable>
+                        @Html.TextBoxFor(m => m.T_Marks, "", new { @class = "Form-control", @placeholder = "Enter  Total Marks." })
+                        @Html.ValidationMessageFor(m => m.T_Marks, "", new { @class = "error" })
+                    </div>
+                    <div>
+                        <lable class="form-control">Address </lable>
+                        @Html.TextBoxFor(m => m.Add, "", new { @class = "Form-control", @placeholder = "Enter your Address ." })
+                        @Html.ValidationMessageFor(m => m.Add, "", new { @class = "error" })
+                    </div>
+                    <div>
+                        <lable class="form-control">Mobile No</lable>
+                        @Html.TextBoxFor(m => m.Mobile, "", new { @class = "Form-control", @placeholder = "Enter your Mobile No." })
+                        @Html.ValidationMessageFor(m => m.Mobile, "", new { @class = "error" })
+                    </div>
+                    @if (ViewBag.edit == "Edit")
+                    {
+    <button type="submit" class="btn btn-primary">EditStudent</button> }
+                    else
+                    {
+
+    <button type="submit" class="btn btn-primary">AddStudent</button>}
+
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                </div>}

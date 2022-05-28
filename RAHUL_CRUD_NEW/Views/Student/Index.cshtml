@@ -1,0 +1,38 @@
+﻿@model List<RAHUL_CRUD_NEW.Rahul.Stu_Table>
+@{ ViewBag.Title = "Index"; }
+
+<h2 style="align-content:center">Student Table</h2>
+<h4 style="color:blue">Add Student Details.....</h4>
+<br />
+<a class="btn btn-primary" href="@Url.Action("AddStudent","Student")">AddStudent</a>
+<br /><br />
+
+
+<table class="table table-bordered table-hover table-responsive table-condensed ">
+    <tr style="color:#2543ed">
+        <th>RollNo</th>
+        <th>Name</th>
+        <th>Class</th>
+        <th>P_Marks</th>
+        <th>T_Marks</th>
+        <th>Address</th>
+        <th>Mobile</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var r in Model)
+    {
+<tr style="color:#f51b1b">
+    <td>@r.RollNo</td>
+    <td>@r.Name</td>
+    <td>@r.Class</td>
+    <td>@r.P_Marks</td>
+    <td>@r.T_Marks</td>
+    <td>@r.Add</td>
+    <td>@r.Mobile</td>
+    <td><a class="btn btn-primary" href="@Url.Action("Update","Student",new {r.RollNo})">Update</a></td>
+    <td><a class="btn btn-danger" href="@Url.Action("Delete","Student",new {r.RollNo})">Delete</a></td>
+</tr>}
+</table>
+
+
